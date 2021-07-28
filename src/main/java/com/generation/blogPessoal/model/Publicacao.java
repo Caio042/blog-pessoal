@@ -7,11 +7,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 
 //anotações são parametros que definem comportamentos pra classes ou propriedade
@@ -35,6 +38,10 @@ public class Publicacao {
     @Temporal (TemporalType.TIMESTAMP) //especificando para o hibernate que se trata de tempo, do tipo timestamp
     private Date data = new java.sql.Date(System.currentTimeMillis()); //ao instanciar o objeto, será armazenado a hora do sistema em que foi instanciado
 
+    @ManyToOne
+    @JsonIgnoreProperties ("publicacoes") //chegando em publicacoes ele ignora, pra nao ficar recursivo
+    private Tema tema;
+    
     public long getId() {
         return id;
     }
@@ -66,6 +73,14 @@ public class Publicacao {
     public void setData(Date data) {
         this.data = data;
     }
+
+	public Tema getTema() {
+		return tema;
+	}
+
+	public void setTema(Tema tema) {
+		this.tema = tema;
+	}
     
     
 }
