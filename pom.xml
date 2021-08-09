@@ -41,10 +41,17 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.junit.vintage</groupId>
+					<artifactId>junit-vintage-engine</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		
 		<dependency>
@@ -54,7 +61,6 @@
     	<dependency>
     		<groupId>commons-codec</groupId>
     		<artifactId>commons-codec</artifactId>
-    		<version>1.10</version>
     	</dependency>
 	</dependencies>
 	

@@ -42,6 +42,10 @@ public class Publicacao {
     @JsonIgnoreProperties ("publicacoes") //chegando em publicacoes ele ignora, pra nao ficar recursivo
     private Tema tema;
     
+    @ManyToOne
+    @JsonIgnoreProperties ("publicacoes")
+	private Usuario usuario;
+    
     public long getId() {
         return id;
     }
