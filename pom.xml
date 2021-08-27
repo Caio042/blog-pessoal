@@ -44,7 +44,7 @@
 			<scope>runtime</scope>
 		</dependency> -->
 		
-		<!-- Dependência PostgreSQL -->  
+		<!-- Dependência PostgreSQL   -->
 		<dependency>   
 			<groupId>org.postgresql</groupId>   
 			<artifactId>postgresql</artifactId> 
