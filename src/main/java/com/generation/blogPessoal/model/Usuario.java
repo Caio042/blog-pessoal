@@ -45,7 +45,9 @@ public class Usuario {
 	@JsonIgnoreProperties("usuario")
 	private List<Publicacao> publicacoes;
 
+	private String foto;
 	
+	private String tipo;
 	
 	
 	public Usuario(long id, String nome, String usuario, String senha, LocalDate dataNascimento) {
@@ -117,6 +119,30 @@ public class Usuario {
 
 	public void setPublicacoes(List<Publicacao> publicacoes) {
 		this.publicacoes = publicacoes;
+	}
+
+
+
+	public String getFoto() {
+		return foto;
+	}
+
+
+
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
+
+
+
+	public String getTipo() {
+		return tipo;
+	}
+
+
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
 	
 	
